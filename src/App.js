@@ -30,7 +30,7 @@ function App() {
     try {
     const res = await fetch(`http://localhost:3000/gives/${id}`);  
     const data = await res.json();
-    setShowGive(data);
+    setShowGive(data.give);
     toggleGiveShowPageHide();
     } catch (err) {
        console.error(err)
@@ -46,7 +46,7 @@ function App() {
         <ul>
           {gives.map((give, id) => {
             return (
-              <div className="give-card-image" key={id} onClick={handleGiveShowPage}>
+              <div className="give-card-image" key={id} onClick={()=>{handleGiveShowPage(give.id)}}>
 
                 <div className="give-name">{give.give_name}</div>
 
