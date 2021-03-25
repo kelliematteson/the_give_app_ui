@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import GiveShowPage from './components/GiveShowPage';
 
 function App() {
   
@@ -17,6 +18,25 @@ function App() {
     }
     makeAPICall()
   }, [])
+  ///Toggle the ShowPage here
+  const [giveShowPageHidden, setGiveShowPageHidden] = useState({ giveShowPageHidden: true });
+
+  const toggleGiveShowPageHide = () => {
+    setGiveShowPageHidden({ giveShowPageHidden: !giveShowPageHidden.giveShowPageHidden });
+  }
+  //handleGiveShowPage function - fetch request with the give.id
+  const [showGive, setShowGive] = useState({});
+  const handleGiveShowPage = async (id) => {
+    try {
+    const res = await fetch(`http://localhost:3000/gives/${id}`);  
+    const data = await res.json();
+    setShowGive(data);
+    toggleGiveShowPageHide();
+    } catch (err) {
+       console.error(err)
+    }
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -26,7 +46,7 @@ function App() {
         <ul>
           {gives.map((give, id) => {
             return (
-              <div className="give-card-image">
+              <div className="give-card-image" key={id} onClick={handleGiveShowPage}>
 
                 <div className="give-name">{give.give_name}</div>
 
@@ -35,6 +55,16 @@ function App() {
           })}
         </ul>
       </div>
+      {giveShowPageHidden.giveShowPageHidden === false ? (
+          <section id="give-show-page">
+            <GiveShowPage 
+              toggleGiveShowPageHide={toggleGiveShowPageHide}
+              showGive={showGive}
+            />
+          </section>
+				) : (
+					''
+				)}
     </div>
   );
 }
