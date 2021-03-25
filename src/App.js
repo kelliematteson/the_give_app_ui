@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import GiveShowPage from './components/GiveShowPage';
+import CreateGive from './components/CreateGive';
 
 function App() {
   
@@ -55,6 +56,7 @@ function App() {
           })}
         </ul>
       </div>
+      <CreateGive />
       {giveShowPageHidden.giveShowPageHidden === false ? (
           <section id="give-show-page">
             <GiveShowPage 
