@@ -17,7 +17,7 @@ export default function Index(props) {
           }
         }
         makeAPICall()
-      }, [])
+      }, [gives])
       //to submit the form to POST to db
     
     return (

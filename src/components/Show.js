@@ -5,9 +5,10 @@ export default function Show(props){
     const [gives, setGives] = useState([]);
     const [showGive, setShowGive] = useState({});
 
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const value = input.current.value;
+        // const value = input.current.value;
             try {
                 const response = await fetch(`http://localhost:3000/gives`, {
                     method: 'POST',
@@ -15,14 +16,14 @@ export default function Show(props){
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        give_name: value,
+                        give_name: input.current.value,
                         give_description: 'used but still good',
                         give_image: 'oldmattress.jpg',
                         giver: 'your Mom'
                     })
                 });
                 const data = await response.json();
-                setGives([data.give,...gives]);
+                setGives([...gives, data]);
                 input.current.value = '';
 
             } catch (error){
