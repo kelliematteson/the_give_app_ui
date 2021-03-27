@@ -33,6 +33,14 @@
   width: 100vw;
   background-color: yellow;
 }
+.Index {
+  background-color: aqua;
+  border: 2px solid black;
+}
+.Show {
+  background-color: blueviolet;
+  border: 2px solid black;
+}
 
 @keyframes App-logo-spin {
   from {

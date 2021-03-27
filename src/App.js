@@ -1,74 +1,54 @@
-import React, {useState, useEffect} from 'react';
+import { useState } from 'react';
 import './App.css';
-import GiveShowPage from './components/GiveShowPage';
-import CreateGive from './components/CreateGive';
+import Index from './components/Index';
+import Show from './components/Show';
 
-function App() {
+export default function App() {
+
+  const [showPageHidden, setShowPageHidden] = useState({ showPageHidden: true });
+    const toggleShowPageHide = () => {
+        setShowPageHidden({ showPageHidden: !showPageHidden.showPageHidden });
+    };
   
-  const [gives, setGives] = useState([]);
-
-  useEffect(() => {
-    const makeAPICall = async () => {
+  const [showGive, setShowGive] = useState({});
+    const handleShow = async (id) => {
       try {
-        const res = await fetch('http://localhost:3000/gives')
-        const data = await res.json();
-        setGives(data.gives);
+      const res = await fetch(`http://localhost:3000/gives/${id}`);  
+      const data = await res.json();
+      setShowGive(data);
+      toggleShowPageHide();
       } catch (err) {
         console.error(err)
       }
     }
-    makeAPICall()
-  }, [])
-  ///Toggle the ShowPage here
-  const [giveShowPageHidden, setGiveShowPageHidden] = useState({ giveShowPageHidden: true });
-
-  const toggleGiveShowPageHide = () => {
-    setGiveShowPageHidden({ giveShowPageHidden: !giveShowPageHidden.giveShowPageHidden });
-  }
-  //handleGiveShowPage function - fetch request with the give.id
-  const [showGive, setShowGive] = useState({});
-  const handleGiveShowPage = async (id) => {
-    try {
-    const res = await fetch(`http://localhost:3000/gives/${id}`);  
-    const data = await res.json();
-    setShowGive(data.give);
-    toggleGiveShowPageHide();
-    } catch (err) {
-       console.error(err)
-    }
-  }
+ 
   
   return (
     <div className="App">
-      <header className="App-header">
-        <h3>Let's see some data!</h3>
-      </header>
-      <div className="gives">
-        <ul>
-          {gives.map((give, id) => {
-            return (
-              <div className="give-card-image" key={id} onClick={()=>{handleGiveShowPage(give.id)}}>
-
-                <div className="give-name">{give.give_name}</div>
-
-              </div>
-            )
-          })}
-        </ul>
-      </div>
-      <CreateGive />
-      {giveShowPageHidden.giveShowPageHidden === false ? (
-          <section id="give-show-page">
-            <GiveShowPage 
-              toggleGiveShowPageHide={toggleGiveShowPageHide}
-              showGive={showGive}
+          <header className="App-header">
+            <h3>The Give</h3>
+          </header>
+        <div className="Index">
+            <Index 
+            handleShow={handleShow}
             />
-          </section>
-				) : (
-					''
-				)}
-    </div>
+        </div>
+        <div className="Page-break"></div>
+        {showPageHidden.showPageHidden === false ? (
+          <div className="Show">
+            <Show
+            toggleShowPageHide={toggleShowPageHide}
+            showGive={showGive}
+            />
+            </div>
+                ) : (
+                  ''
+                )}
+        
+      </div>
+  
   );
+
+  
 }
 
-export default App;
