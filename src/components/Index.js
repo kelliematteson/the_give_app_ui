@@ -17,9 +17,9 @@ export default function Index(props) {
           }
         }
         makeAPICall()
-      }, [gives])
+      }, [])
       //to submit the form to POST to db
-    
+
     return (
         <div className="Index-container">
             <h2>This is the Index</h2>

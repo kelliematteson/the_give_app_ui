@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 
 export default function Show(props){
     const input = useRef(null);
+    const updateInput = useRef(null);
     const [gives, setGives] = useState([]);
     const [showGive, setShowGive] = useState({});
 
@@ -30,6 +31,43 @@ export default function Show(props){
                 console.error(error);
             }
     };
+    const handleDelete = async (e) => {
+        e.preventDefault();
+        let id = props.showGive.id;
+        console.log(id);
+        try {
+            const response = await fetch(`http://localhost:3000/gives/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await response.json();
+            setGives(!data) /// trying to make the index update after change
+        } catch (error) {
+            console.error(error)
+        }
+    };
+    const handleUpdate = async e => {
+        e.preventDefault();
+        let id = props.showGive.id;
+        try {
+            const res = await fetch(`http://localhost:3000/gives/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    give_name: updateInput.current.value
+                })
+            });
+            const data = await res.json();
+            setGives(data);
+
+        } catch (error){
+            console.error(error);
+        }
+    };
 
     return (
         <div className="Show-container">
@@ -45,6 +83,13 @@ export default function Show(props){
                         <input type="text" name="give_name" ref={input} placeholder="Item Name"/>
                         <input className="Give-button" type="submit" value="Give"/>
                     </form>
+                </section>
+                <section className="Update-form">
+                    <form onSubmit={handleUpdate}>
+                        <input type="text" name="give_name" ref={updateInput} placeholder="Update Name"/>   
+                        <input type="submit" value="Update Give" />  
+                    </form>
+                    <button onClick={handleDelete}>Delete</button>
                 </section>
         </div>
 
