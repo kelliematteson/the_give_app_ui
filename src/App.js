@@ -30,24 +30,24 @@ export default function App() {
           <header className="App-header">
             <h3>The Give</h3>
           </header>
-        <div className="Index">
-            <Index 
-            handleShow={handleShow}
-            />
-        </div>
-        <div className="Page-break"></div>
-        {showPageHidden.showPageHidden === false ? (
-          <div className="Show">
-            <Show
-            toggleShowPageHide={toggleShowPageHide}
-            showGive={showGive}
-            />
-            </div>
+          <div className="Data-div">
+              <div className="Index">
+                <Index 
+                  handleShow={handleShow}
+                />
+              </div>
+              {showPageHidden.showPageHidden === false ? (
+              <div className="Show">
+                <Show
+                toggleShowPageHide={toggleShowPageHide}
+                showGive={showGive}
+                />
+              </div>
                 ) : (
                   ''
                 )}
-        
-      </div>
+          </div>
+    </div>
       
   );
 

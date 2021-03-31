@@ -22,7 +22,7 @@ export default function Index(props) {
 
     return (
         <div className="Index-container">
-            <h2>This is the Index</h2>
+            <h2>Freely Given</h2>
             <div className="gives">
                     <ul>
                         {gives.map((give, id) => {

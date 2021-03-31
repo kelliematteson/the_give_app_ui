@@ -3,7 +3,8 @@ import { useState, useRef } from 'react';
 export default function Show(props){
     const input = useRef(null);
     const updateInput = useRef(null);
-    const [gives, setGives] = useState({});
+    const inputDescription = useRef(null);
+    const [gives, setGives] = useState([]);
     const [showGive, setShowGive] = useState({});
 
 
@@ -18,14 +19,16 @@ export default function Show(props){
                     },
                     body: JSON.stringify({
                         give_name: input.current.value,
-                        give_description: 'used but still good',
+                        give_description: inputDescription.current.value,
                         give_image: 'oldmattress.jpg',
-                        giver: 'your Mom'
+                        giver: 'your Mom',
+                        user_id: 2
                     })
                 });
                 const data = await response.json();
-                setGives([...gives, data]);
+                setGives([...gives, data.gife]);
                 input.current.value = '';
+                inputDescription.current.value = '';
 
             } catch (error){
                 console.error(error);
@@ -62,14 +65,12 @@ export default function Show(props){
                 })
             });
             const data = await res.json();
-        
-            setGives({...gives, data : id});
+            setGives(data);
 
         } catch (error){
             console.error(error);
         }
     };
-   
 
     return (
         <div className="Show-container">
@@ -83,10 +84,11 @@ export default function Show(props){
                 <section className="form-style-2">
                     <form onSubmit={handleSubmit}>
                         <input type="text" name="give_name" ref={input} placeholder="Item Name"/>
+                        <input type="text" name="give_description" ref={inputDescription} placeholder="Item Description"/>
                         <input className="Give-button" type="submit" value="Give"/>
                     </form>
                 </section>
-                <section className="form-style-2">
+                <section className="Update-form">
                     <form onSubmit={handleUpdate}>
                         <input type="text" name="give_name" ref={updateInput} defaultValue={showGive.name}/>   
                         <input type="submit" value="Update Give" />  

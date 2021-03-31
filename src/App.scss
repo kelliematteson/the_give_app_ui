@@ -1,7 +1,7 @@
- body {
-  width: 100%;
-  height: 100%;
-}
+//  body {
+//   width: 100%;
+//   height: 100%;
+// }
 /// The Give Theme Colors
 $pink: #E7717D;
 $grey: #C2CAD0;
@@ -10,10 +10,18 @@ $brown: #7E685A;
 $green: #AFD275;
 /// Theme Fonts
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Train+One&display=swap');
+body {
+	height: 100%;
+	width: 100%;
+}
 .App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+	background-color: $green;
+	text-align: center;
+	height: 100vh;
+	width: 100vw;
+	place-items: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .App-header {
@@ -23,28 +31,28 @@ $green: #AFD275;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(20px + 2vmin);
+  font-size: calc(40px + 2vmin);
   color: $brown;
   font-family: 'Train One', 'serif';
 }
 
+.Data-div {
+	display: flex;
+}
 
 .Index {
   background-color: $green;
-  min-height: 20vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: black;
+  color: white;
 }
 .Show {
   background-color: $pink;
-  height: 100vh;
-  width: 100vw;
   display: flex;
-  flex-direction: show;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -106,7 +114,7 @@ $green: #AFD275;
 .form-style-2 .tel-number-field:focus, 
 .form-style-2 .textarea-field:focus,  
 .form-style-2 .select-field:focus{
-	border: 1px solid #0C0;
+	border: 1px solid $grey;
 }
 .form-style-2 .textarea-field{
 	height:100px;
@@ -116,7 +124,7 @@ $green: #AFD275;
 .form-style-2 input[type=button]{
 	border: none;
 	padding: 8px 15px 8px 15px;
-	background: #FF8500;
+	background: $brown;
 	color: #fff;
 	box-shadow: 1px 1px 4px #DADADA;
 	-moz-box-shadow: 1px 1px 4px #DADADA;
@@ -127,7 +135,7 @@ $green: #AFD275;
 }
 .form-style-2 input[type=submit]:hover,
 .form-style-2 input[type=button]:hover{
-	background: #EA7B00;
+	background: $brown;
 	color: #fff;
 }
 
