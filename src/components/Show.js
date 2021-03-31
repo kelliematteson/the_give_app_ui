@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 export default function Show(props){
     const input = useRef(null);
     const updateInput = useRef(null);
-    const [gives, setGives] = useState([]);
+    const [gives, setGives] = useState({});
     const [showGive, setShowGive] = useState({});
 
 
@@ -62,12 +62,14 @@ export default function Show(props){
                 })
             });
             const data = await res.json();
-            setGives(data);
+        
+            setGives({...gives, data : id});
 
         } catch (error){
             console.error(error);
         }
     };
+   
 
     return (
         <div className="Show-container">
@@ -78,15 +80,15 @@ export default function Show(props){
                     <h3>{props.showGive.give_description}</h3>
                     <h3>{props.showGive.giver}</h3>
                  </section>
-                <section className="Give-form">
+                <section className="form-style-2">
                     <form onSubmit={handleSubmit}>
                         <input type="text" name="give_name" ref={input} placeholder="Item Name"/>
                         <input className="Give-button" type="submit" value="Give"/>
                     </form>
                 </section>
-                <section className="Update-form">
+                <section className="form-style-2">
                     <form onSubmit={handleUpdate}>
-                        <input type="text" name="give_name" ref={updateInput} placeholder="Update Name"/>   
+                        <input type="text" name="give_name" ref={updateInput} defaultValue={showGive.name}/>   
                         <input type="submit" value="Update Give" />  
                     </form>
                     <button onClick={handleDelete}>Delete</button>

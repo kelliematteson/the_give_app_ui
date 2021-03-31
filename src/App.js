@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import './App.css';
+import './App.scss';
 import Index from './components/Index';
 import Show from './components/Show';
+
 
 export default function App() {
 
@@ -24,6 +25,7 @@ export default function App() {
  
   
   return (
+    
     <div className="App">
           <header className="App-header">
             <h3>The Give</h3>
@@ -46,7 +48,7 @@ export default function App() {
                 )}
         
       </div>
-  
+      
   );
 
   
