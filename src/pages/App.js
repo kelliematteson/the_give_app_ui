@@ -1,54 +1,47 @@
+import React from 'react';
 import { useState } from 'react';
 import '../styles/App.scss';
 import Index from '../components/Index';
 import Show from '../components/Show';
+import Give from './Give';
+import About from './About';
+import Home from './Home';
+import NavBar from '../components/NavBar';
+import{BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 
 export default function App() {
 
-  const [showPageHidden, setShowPageHidden] = useState({ showPageHidden: true });
-    const toggleShowPageHide = () => {
-        setShowPageHidden({ showPageHidden: !showPageHidden.showPageHidden });
-    };
+  // const [showPageHidden, setShowPageHidden] = useState({ showPageHidden: true });
+  //   const toggleShowPageHide = () => {
+  //       setShowPageHidden({ showPageHidden: !showPageHidden.showPageHidden });
+  //   };
   
-  const [showGive, setShowGive] = useState({});
-    const handleShow = async (id) => {
-      try {
-      const res = await fetch(`http://localhost:3000/gives/${id}`);  
-      const data = await res.json();
-      setShowGive(data);
-      toggleShowPageHide();
-      } catch (err) {
-        console.error(err)
-      }
-    }
+  // const [showGive, setShowGive] = useState({});
+  //   const handleShow = async (id) => {
+  //     try {
+  //     const res = await fetch(`http://localhost:3000/gives/${id}`);  
+  //     const data = await res.json();
+  //     setShowGive(data);
+  //     toggleShowPageHide();
+  //     } catch (err) {
+  //       console.error(err)
+  //     }
+  //   }
  
   
   return (
-    
-    <div className="App">
-          <header className="App-header">
-            <h3>The Give</h3>
-          </header>
-          <div className="Data-div">
-              <div className="Index">
-                <Index 
-                  handleShow={handleShow}
-                />
-              </div>
-              {showPageHidden.showPageHidden === false ? (
-              <div className="Show">
-                <Show
-                toggleShowPageHide={toggleShowPageHide}
-                showGive={showGive}
-                />
-              </div>
-                ) : (
-                  ''
-                )}
-          </div>
-    </div>
-      
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/give" component={Give} />
+            <Route path="/about" component={About} />
+          </Switch>
+      </div>
+    </Router> 
   );
 
   

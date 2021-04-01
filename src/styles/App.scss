@@ -10,9 +10,39 @@ $brown: #7E685A;
 $green: #AFD275;
 /// Theme Fonts
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Train+One&display=swap');
-body {
-	height: 100%;
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+#{$a-tags} {
+	text-decoration: none;
+  }
+  #{$a-tags-hover} {
+	color: blue;
+  }
+// body {
+// 	height: 100%;
+// 	width: 100%;
+// }
+.NavBar {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 	width: 100%;
+	min-height: 10vh;
+	background: $brown;
+	color: white;
+	h3{
+		font-family: 'Train One';
+		color: white;
+		font-size: 30px;
+		}
+	}
+.nav-List {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+
 }
 .App {
 	background-color: $green;
