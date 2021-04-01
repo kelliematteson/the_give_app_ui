@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './App.scss';
-import Index from './components/Index';
-import Show from './components/Show';
+import '../styles/App.scss';
+import Index from '../components/Index';
+import Show from '../components/Show';
 
 
 export default function App() {
