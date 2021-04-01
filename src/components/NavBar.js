@@ -27,9 +27,4 @@ export default function NavBar() {
         </nav>
     )
 
-
-
-
-
-
 }

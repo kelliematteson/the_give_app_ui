@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Card } from 'react-bootstrap';
+
 
 export default function Index(props) {
 
@@ -28,7 +28,7 @@ export default function Index(props) {
                         {gives.map((give, id) => {
                             return (
                                 <div className="card" key={id} onClick={() => {props.handleShow(give.id)}}> 
-                                        <Card>{give.give_name}</Card>
+                                        <h2>{give.give_name}</h2>
                                 </div>
                                     )
                         })}

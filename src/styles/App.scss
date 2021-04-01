@@ -18,10 +18,10 @@ $a-tags-hover: 'a:active, a:hover';
   #{$a-tags-hover} {
 	color: blue;
   }
-// body {
-// 	height: 100%;
-// 	width: 100%;
-// }
+body {
+	height: 100%;
+	width: 100%;
+}
 .NavBar {
 	display: flex;
 	justify-content: space-around;
@@ -69,7 +69,7 @@ $a-tags-hover: 'a:active, a:hover';
 .Data-div {
 	display: flex;
 }
-
+/// Index Component Styling
 .Index {
   background-color: $green;
   display: flex;
@@ -78,6 +78,17 @@ $a-tags-hover: 'a:active, a:hover';
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.card {
+	display: flex;
+    background-color: white;
+    border-radius: 15px;
+	flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    color: $pink;  
 }
 .Show {
   background-color: $pink;

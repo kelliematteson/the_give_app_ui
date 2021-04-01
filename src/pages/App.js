@@ -13,24 +13,7 @@ import{BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default function App() {
 
-  // const [showPageHidden, setShowPageHidden] = useState({ showPageHidden: true });
-  //   const toggleShowPageHide = () => {
-  //       setShowPageHidden({ showPageHidden: !showPageHidden.showPageHidden });
-  //   };
-  
-  // const [showGive, setShowGive] = useState({});
-  //   const handleShow = async (id) => {
-  //     try {
-  //     const res = await fetch(`http://localhost:3000/gives/${id}`);  
-  //     const data = await res.json();
-  //     setShowGive(data);
-  //     toggleShowPageHide();
-  //     } catch (err) {
-  //       console.error(err)
-  //     }
-  //   }
- 
-  
+
   return (
     <Router>
       <div className="App">
