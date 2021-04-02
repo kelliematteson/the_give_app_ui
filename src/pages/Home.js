@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import '../styles/App.scss';
+import '../scss/App.scss';
 import Index from '../components/Index';
 import Show from '../components/Show';
 

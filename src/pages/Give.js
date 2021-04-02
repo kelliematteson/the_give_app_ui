@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Button } from 'react-bootstrap';
 
 export default function Give() {
     const [gives, setGives] = useState({});
@@ -45,7 +46,7 @@ export default function Give() {
                         <input type="text" name="give_description" ref={inputDescription} placeholder="Item Description"/>
                         <input type="text" name="give_image" ref={inputImage} placeholder="Item Image"/>
                         <input type="text" name="giver" ref={inputGiver} placeholder="Giver"/>
-                        <input className="Give-button" type="submit" value="Give"/>
+                        <Button className="Give-button" type="submit" value="Give">GIVE</Button>
                     </form>
                 </section>
             </div>
