@@ -16,6 +16,11 @@ $a-tags-hover: 'a:active, a:hover';
   #{$a-tags-hover} {
 	color: blue;
   }
+  .img-fluid { 
+	  max-width: 50%;
+	  height: auto;
+  }
+
 body {
 	height: 100%;
 	width: 100%;

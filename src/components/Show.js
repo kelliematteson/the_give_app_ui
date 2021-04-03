@@ -55,7 +55,7 @@ export default function Show(props){
             <div className="Back-arrow" onClick={props.toggleShowPageHide}>back</div>
                 <section className="Show-card">
                     <h3>Name: {props.showGive.give_name}</h3>
-                    <img src={props.showGive.give_image}></img>
+                    <img src={`/images/${props.showGive.give_image}`}></img>
                     <h3>Description: {props.showGive.give_description}</h3>
                     <h3>Giver: {props.showGive.giver}</h3>
                  </section>

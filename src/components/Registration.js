@@ -25,8 +25,8 @@ export default class Registration extends Component {
                 username: username,
                 password: password
             }
-        }, 
-        { withCredentials: true }
+        } 
+        // { withCredentials: true }
         ).then(response => {
             console.log("registration res", response);
         })

@@ -28,8 +28,8 @@ export default function Index(props) {
                     <ul>
                         {gives.map((give, id) => {
                             return (
-                                <Card key={id} onClick={() => {props.handleShow(give.id)}}> 
-                                        <Card.Img variant="top" src="/public/images/beigeCouch.jpg/100px180" />
+                                <Card style={{ width: '50%' }} key={id} onClick={() => {props.handleShow(give.id)}}> 
+                                        <Card.Img variant="top" className="img-fluid" src={`/images/${give.give_image}`} />
                                         <Card.Body>
                                         <Card.Text>{give.give_name}</Card.Text>
                                         </Card.Body>
