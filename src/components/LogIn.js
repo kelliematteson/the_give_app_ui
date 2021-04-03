@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
-export default class Registration extends Component {
+export default class LogIn extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             username: '',
-            password: '',
-            registrationErrors: ''
+            password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -20,7 +19,7 @@ export default class Registration extends Component {
             password
         } = this.state;
 
-        axios.post("http://localhost:3000/clients", {
+        axios.post("http://localhost:3000/clients/login", {
             client: {
                 username: username,
                 password: password
@@ -28,7 +27,9 @@ export default class Registration extends Component {
         } 
         // { withCredentials: true }
         ).then(response => {
-            console.log("registration res", response);
+            console.log("res from login", response);
+            
+
         })
         .catch(error => {
             console.log("registration error", error)
@@ -42,8 +43,9 @@ export default class Registration extends Component {
     }
 
     render() {
-        return (<div>
-            <form onSubmit={this.handleSubmit}>
+        return (<div classname="login">
+            <Form onSubmit={this.handleSubmit}>
+                <h3>Log In Form</h3>
                 <input 
                 type="text" 
                 name="username" 
@@ -60,9 +62,9 @@ export default class Registration extends Component {
                 onChange={this.handleChange} 
                 required 
                 />
-                <Button type="submit">Register</Button>
+                <Button variant="primary"type="submit">Log In</Button>
 
-                </form>  
+                </Form>  
         </div>);
     }
 
