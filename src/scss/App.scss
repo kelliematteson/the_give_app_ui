@@ -1,0 +1,210 @@
+@import "~bootstrap/scss/bootstrap";
+/// The Give Theme Colors
+$pink: #E7717D;
+$grey: #C2CAD0;
+$taupe: #C2B9B0;
+$brown: #7E685A;
+$green: #AFD275;
+$white: #fffafa;
+/// Theme Fonts
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Train+One&display=swap');
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+#{$a-tags} {
+	text-decoration: none;
+  }
+  #{$a-tags-hover} {
+	color: blue;
+  }
+  .img-fluid { 
+	  max-width: 50%;
+	  height: auto;
+  }
+
+body {
+	height: 100%;
+	width: 100%;
+}
+.NavBar {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	min-height: 10vh;
+	background: $white;
+	color: $brown;
+	h3{
+		font-family: 'Train One';
+		color: $brown;
+		font-size: 50px;
+		}
+	}
+.nav-List {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+	li {
+		color: $brown;
+	}
+}
+.App {
+	background-color: $white;
+	text-align: center;
+	height: 100vh;
+	width: 100vw;
+	place-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.App-header {
+  background-color: $white;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  color: $brown;
+  font-family: 'Train One', 'serif';
+}
+
+.Data-div {
+	display: flex;
+}
+/// Index Component Styling
+.Index {
+  background-color: $white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: $brown;
+}
+.card {
+	display: flex;
+    background-color: $pink;
+    border-radius: 15px;
+	flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    color: $white;  
+}
+.Show {
+  background-color: $white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: $brown;
+}
+.About-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 50%;
+	.about-bold{
+		font-weight: bolder;
+		font-style: italic;
+	}
+	h2{
+		color: $brown;
+	}
+}
+
+.form-style-2{
+	max-width: 500px;
+	padding: 20px 12px 10px 20px;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-2-heading{
+	font-weight: bold;
+	font-style: italic;
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 20px;
+	font-size: 15px;
+	padding-bottom: 3px;
+}
+.form-style-2 label{
+	display: block;
+	margin: 0px 0px 15px 0px;
+}
+.form-style-2 label > span{
+	width: 100px;
+	font-weight: bold;
+	float: left;
+	padding-top: 8px;
+	padding-right: 5px;
+}
+.form-style-2 span.required{
+	color:red;
+}
+.form-style-2 .tel-number-field{
+	width: 40px;
+	text-align: center;
+}
+.form-style-2 input.input-field, .form-style-2 .select-field{
+	width: 48%;	
+}
+.form-style-2 input.input-field, 
+.form-style-2 .tel-number-field, 
+.form-style-2 .textarea-field, 
+ .form-style-2 .select-field{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	-moz-box-shadow: 1px 1px 4px #EBEBEB;
+	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 7px;
+	outline: none;
+}
+.form-style-2 .input-field:focus, 
+.form-style-2 .tel-number-field:focus, 
+.form-style-2 .textarea-field:focus,  
+.form-style-2 .select-field:focus{
+	border: 1px solid $grey;
+}
+.form-style-2 .textarea-field{
+	height:100px;
+	width: 55%;
+}
+.form-style-2 input[type=submit],
+.form-style-2 input[type=button]{
+	border: none;
+	padding: 8px 15px 8px 15px;
+	background: $brown;
+	color: #fff;
+	box-shadow: 1px 1px 4px #DADADA;
+	-moz-box-shadow: 1px 1px 4px #DADADA;
+	-webkit-box-shadow: 1px 1px 4px #DADADA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+.form-style-2 input[type=submit]:hover,
+.form-style-2 input[type=button]:hover{
+	background: $brown;
+	color: #fff;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
