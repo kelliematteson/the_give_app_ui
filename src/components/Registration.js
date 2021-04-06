@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
+import { Button, FormControl } from 'react-bootstrap';
 
 export default class Registration extends Component {
     constructor(props) {
@@ -29,6 +29,7 @@ export default class Registration extends Component {
         // { withCredentials: true }
         ).then(response => {
             console.log("registration res", response);
+            alert('You are now registered to GIVE!');
         })
         .catch(error => {
             console.log("registration error", error)

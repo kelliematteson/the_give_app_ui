@@ -44,6 +44,7 @@ export default function Show(props){
             });
             const data = await res.json();
             setGives(data);
+            console.log(data);
 
         } catch (error){
             console.error(error);

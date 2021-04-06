@@ -1,12 +1,26 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
-export default function Give() {
-    const [gives, setGives] = useState({});
+export default function NewGive(props) {
+    const [gives, setGives] = useState([]);
+    // useEffect(() => {
+    //     const makeAPICall = async () => {
+    //       try {
+    //         const res = await fetch('http://localhost:3000/gives')
+    //         const data = await res.json();
+    //         setGives(data.gives);
+    //       } catch (err) {
+    //         console.error(err)
+    //       }
+    //     }
+    //     makeAPICall()
+    //   }, [])
+    // const [gives, setGives] = useState({});
     const input = useRef(null);
     const inputImage = useRef(null);
     const inputGiver = useRef(null);
     const inputDescription = useRef(null);
+    // console.log(gives);
 
     const handleSubmit = async (event) => {
     event.preventDefault();
@@ -18,15 +32,18 @@ export default function Give() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    gife: {
                     give_name: input.current.value,
                     give_description: inputDescription.current.value,
                     give_image: inputImage.current.value,
                     giver: inputGiver.current.value,
-                    user_id: 2
-                })
+                    client_id: 2
+                }})
             });
             const data = await response.json();
-            setGives([...gives, data.gife]);
+            setGives([...gives, data.gife])
+            console.log(data);
+            // setGives([...gives, data.gives]);
             input.current.value = '';
             inputDescription.current.value = '';
             inputImage.current.value = '';
@@ -38,7 +55,8 @@ export default function Give() {
 };
         return (
             <div className="Give-page">
-                <h2>Give Page</h2>
+                <h2>Give Component</h2>
+                
                 <h3>New form goes here</h3>
                 <section className="form-style-2">
                     <form onSubmit={handleSubmit}>

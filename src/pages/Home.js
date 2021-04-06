@@ -1,8 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import '../scss/App.scss';
+
+
 import Index from '../components/Index';
 import Show from '../components/Show';
+import NewGive from '../components/NewGive';
 
 
 
@@ -46,6 +49,9 @@ export default function Home() {
                 ) : (
                   ''
                 )}
+          </div>
+          <div className="new-give">
+            <NewGive />
           </div>
     </div>
     
