@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import { FormControl, Form, FormGroup } from 'react-bootstrap';
+
+
 
 export default function NewGive(props) {
     const [gives, setGives] = useState([]);
@@ -54,19 +57,21 @@ export default function NewGive(props) {
         }
 };
         return (
-            <div className="Give-page">
-                <h2>Give Component</h2>
+            <div>
                 
-                <h3>New form goes here</h3>
+                <h2>Feeling Generous?</h2>
+                
+                <h3>Give Below</h3>
                 <section className="form-style-2">
                     <form onSubmit={handleSubmit}>
                         <input type="text" name="give_name" ref={input} placeholder="Item Name"/>
                         <input type="text" name="give_description" ref={inputDescription} placeholder="Item Description"/>
                         <input type="text" name="give_image" ref={inputImage} placeholder="Item Image"/>
                         <input type="text" name="giver" ref={inputGiver} placeholder="Giver"/>
-                        <Button className="Give-button" type="submit" value="Give">GIVE</Button>
+                        <Button variant="outline-success" type="submit" value="Give">GIVE</Button>
                     </form>
                 </section>
+                
             </div>
         )
 

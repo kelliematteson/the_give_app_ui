@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Button, FormControl } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
 export default class Registration extends Component {
     constructor(props) {
@@ -44,8 +44,11 @@ export default class Registration extends Component {
 
     render() {
         return (<div>
-            <form onSubmit={this.handleSubmit}>
-                <input 
+
+            <Form  onSubmit={this.handleSubmit}>
+                <Form.Group controlid="registerUserNameForm">
+                <Form.Label>User Name</Form.Label>
+                <Form.Control 
                 type="text" 
                 name="username" 
                 placeholder="Name" 
@@ -53,17 +56,22 @@ export default class Registration extends Component {
                 onChange={this.handleChange} 
                 required 
                 />
-                <input 
-                type="text" 
+                <Form.Text className="text-muted">Pick a name you will remember!</Form.Text>
+                </Form.Group>
+                <Form.Group controlid="registerPassWordForm">
+                    <Form.Label>Password</Form.Label>
+                <Form.Control 
+                type="password" 
                 name="password" 
                 placeholder="Password" 
                 value={this.state.password} 
                 onChange={this.handleChange} 
                 required 
                 />
-                <Button type="submit">Register</Button>
+                </Form.Group>
+                <Button variant="outline-success" type="submit">Register</Button>
 
-                </form>  
+                </Form>  
         </div>);
     }
 

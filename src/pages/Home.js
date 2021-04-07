@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import '../scss/App.scss';
+import { Container } from 'react-bootstrap';
 
 
 import Index from '../components/Index';
 import Show from '../components/Show';
 import NewGive from '../components/NewGive';
+
 
 
 
@@ -15,6 +17,7 @@ export default function Home() {
     const toggleShowPageHide = () => {
         setShowPageHidden({ showPageHidden: !showPageHidden.showPageHidden });
     };
+
   
   const [showGive, setShowGive] = useState({});
     const handleShow = async (id) => {
@@ -31,8 +34,9 @@ export default function Home() {
   
   return (
     
-    <div className="Home">
+    <Container>
       
+    
           <div className="Data-div">
               <div className="Index">
                 <Index 
@@ -50,10 +54,12 @@ export default function Home() {
                   ''
                 )}
           </div>
-          <div className="new-give">
+          <div>
             <NewGive />
           </div>
-    </div>
+
+        
+    </Container>
     
   );
 

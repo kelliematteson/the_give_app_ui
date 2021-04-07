@@ -15,6 +15,7 @@ export default function App() {
 
 
   return (
+    
     <Router>
       <div className="App">
         <NavBar />
@@ -25,6 +26,7 @@ export default function App() {
           </Switch>
       </div>
     </Router> 
+    
   );
 
   

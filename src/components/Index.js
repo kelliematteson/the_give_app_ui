@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Card } from 'react-bootstrap';
-
+import Content from '../components/Content';
+import { Card, CardGroup } from 'react-bootstrap';
 
 export default function Index(props) {
 
@@ -23,21 +23,28 @@ export default function Index(props) {
 
     return (
         <div className="Index-container">
-            <h2>Freely Given</h2>
-            <div className="gives">
-                    <ul>
+          
+            
+                  
                         {gives.map((give, id) => {
                             return (
-                                <Card style={{ width: '50%' }} key={id} onClick={() => {props.handleShow(give.id)}}> 
-                                        <Card.Img variant="top" className="img-fluid" src={`/images/${give.give_image}`} />
+                              <CardGroup>
+                                <Card bg='success' style={{ width: '18rem' }} className="card" key={id} onClick={() => {props.handleShow(give.id)}}> 
+                                        <Card.Header>Freely Given</Card.Header>
                                         <Card.Body>
-                                        <Card.Text>{give.give_name}</Card.Text>
+                                        <Card.Title>{give.give_name}</Card.Title>
+                                        <Card.Text>
+                                          <p>{give.give_description}</p>
+                                          <p>{give.giver}</p>
+                                        </Card.Text>
                                         </Card.Body>
                                 </Card>
+                                </CardGroup> 
                                     )
                         })}
-                    </ul>
-            </div>
+                  
+            
+          
         </div>
         
     )
