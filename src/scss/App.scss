@@ -27,6 +27,22 @@ $a-tags-hover: 'a:active, a:hover';
 // 	  margin: 0px;
 // 	  height: 100%;
 //   }
+.splash-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    overflow: hidden;
+    position: absolute;     
+    width: 100% !important;     
+	height: 100% !important;
+	z-index: 100;
+	background-color: white;
+	.NavBar {
+		display: none;
+	}
+  }
+
+ 
 .NavBar {
 	display: flex;
 	justify-content: space-around;
