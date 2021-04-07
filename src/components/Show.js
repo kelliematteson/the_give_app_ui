@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-
+import { Button, Container, Form } from 'react-bootstrap';
 
 
 export default function Show(props){
@@ -52,29 +52,65 @@ export default function Show(props){
             console.error(error);
         }
     };
+    const styles = {
+        
+            paddingTop: "5vh",
+            paddingBottom: "5vh"
+        
+    }
 
     return (
-        <div className="show">
+        <Container style={styles}>
             
-            <div className="Back-arrow" onClick={props.toggleShowPageHide}>back up to the Gives</div>
+            <Button variant="outline-success" onClick={props.toggleShowPageHide}>back</Button>
                 <section className="Show-card">
-                    <h3>Name: {props.showGive.give_name}</h3>
+                    <h3>Item: {props.showGive.give_name}</h3>
                     <img className="Show-image" src={`/images/${props.showGive.give_image}`}></img>
-                    <h3>Description: {props.showGive.give_description}</h3>
-                    <h3>Giver: {props.showGive.giver}</h3>
+                    <p>Description: {props.showGive.give_description}</p>
+                    <p>Giver: {props.showGive.giver}</p>
                  </section>
-                <section className="Update-form">
-                    <form onSubmit={handleUpdate}>
-                        <input type="text" name="give_name" ref={updateInput} placeholder={showGive.name}/>
-                        <input type="text" name="give_description" ref={updateDescription} defaultValue={showGive.description}/>
-                        <input type="text" name="give_image" ref={updateImage} defaultValue={showGive.image}/>
-                        <input type="text" name="giver" ref={updateGiver} defaultValue={showGive.giver}/>         
-                        <input type="submit" value="Update Give" />  
-                    </form>
-                    <button onClick={handleDelete}>Delete</button>
-                </section>
+
+                    <Form onSubmit={handleUpdate}>
+                    <Form.Group controlid="updateName">
+                            <Form.Control 
+                            type="text" 
+                            name="give_name" 
+                            ref={updateInput}
+                            placeholder="update the name"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="updateDescription">
+                            <Form.Control 
+                            type="text" 
+                            name="give_description" 
+                            ref={updateDescription}
+                            placeholder="update the description"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="updateImage">
+                            <Form.Control 
+                            type="text" 
+                            name="give_image" 
+                            ref={updateImage}
+                            placeholder="update the image"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="updateGiver">
+                            <Form.Control 
+                            type="text" 
+                            name="giver" 
+                            ref={updateGiver}
+                            placeholder="update who it's from"
+                            />
+                            </Form.Group>
+                        
+                        <Button variant="outline-success" type="submit" value="Update Give">Update</Button> 
+                        <Button variant="outline-danger" onClick={handleDelete}>Delete</Button>
+                    </Form>
+                    
+                
             
-        </div>
+                </Container>
 
     )
 

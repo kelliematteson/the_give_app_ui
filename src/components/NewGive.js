@@ -57,20 +57,47 @@ export default function NewGive(props) {
         }
 };
         return (
-            <div>
+            <div className="NewGive">
                 
-                <h2>Feeling Generous?</h2>
+                <h2>Buy Nothing, Give Freely, Share Creatively</h2>
                 
-                <h3>Give Below</h3>
-                <section className="form-style-2">
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" name="give_name" ref={input} placeholder="Item Name"/>
-                        <input type="text" name="give_description" ref={inputDescription} placeholder="Item Description"/>
-                        <input type="text" name="give_image" ref={inputImage} placeholder="Item Image"/>
-                        <input type="text" name="giver" ref={inputGiver} placeholder="Giver"/>
-                        <Button variant="outline-success" type="submit" value="Give">GIVE</Button>
-                    </form>
-                </section>
+                
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group controlid="postName">
+                            <Form.Control 
+                            type="text" 
+                            name="give_name" 
+                            ref={input} 
+                            placeholder="Item Name"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="postDescription">
+                            <Form.Control 
+                            type="text" 
+                            name="give_description" 
+                            ref={inputDescription} 
+                            placeholder="Description"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="postImage">
+                            <Form.Control 
+                            type="text" 
+                            name="give_image" 
+                            ref={inputImage} 
+                            placeholder="Image Link"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="postGiver">
+                            <Form.Control 
+                            type="text" 
+                            name="giver" 
+                            ref={inputGiver} 
+                            placeholder="Your Name"
+                            />
+                            </Form.Group>
+                        <Button variant="success" type="submit" value="Give">GIVE</Button>
+                    </Form>
+                
                 
             </div>
         )

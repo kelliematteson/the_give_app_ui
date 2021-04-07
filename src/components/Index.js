@@ -29,7 +29,7 @@ export default function Index(props) {
                         {gives.map((give, id) => {
                             return (
                               <CardGroup>
-                                <Card bg='success' style={{ width: '18rem' }} className="card" key={id} onClick={() => {props.handleShow(give.id)}}> 
+                                <Card border='success' style={{ width: '18rem' }} className="card" key={id} onClick={() => {props.handleShow(give.id)}}> 
                                         <Card.Header>Freely Given</Card.Header>
                                         <Card.Body>
                                         <Card.Title>{give.give_name}</Card.Title>

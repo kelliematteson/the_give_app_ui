@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../scss/App.scss';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 import Index from '../components/Index';
@@ -34,29 +34,31 @@ export default function Home() {
   
   return (
     
-    <Container>
+    <Container fluid="md">
       
     
-          <div className="Data-div">
-              <div className="Index">
+          <Row>
+            <Col>
+              <section className="Index">
                 <Index 
                   handleShow={handleShow}
                 />
-              </div>
+              </section>
               {showPageHidden.showPageHidden === false ? (
-              <div className="Show">
+              <section className="Show">
                 <Show
                 toggleShowPageHide={toggleShowPageHide}
                 showGive={showGive}
                 />
-              </div>
+              </section>
                 ) : (
                   ''
                 )}
-          </div>
-          <div>
+          <section className="NewGive">
             <NewGive />
-          </div>
+            </section>
+            </Col>
+          </Row>
 
         
     </Container>

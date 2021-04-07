@@ -14,9 +14,9 @@ $a-tags-hover: 'a:active, a:hover';
 #{$a-tags} {
 	text-decoration: none;
   }
-//   #{$a-tags-hover} {
-// 	color: blue;
-//   }
+  #{$a-tags-hover} {
+	text-decoration: none;
+  }
 //   .img-fluid { 
 // 	  max-width: 50%;
 // 	  height: auto;
@@ -27,7 +27,6 @@ $a-tags-hover: 'a:active, a:hover';
 // 	  margin: 0px;
 // 	  height: 100%;
 //   }
- 
 .NavBar {
 	display: flex;
 	justify-content: space-around;
@@ -40,6 +39,9 @@ $a-tags-hover: 'a:active, a:hover';
 		font-family: 'Train One';
 		color: $brown;
 		font-size: 50px;
+		}
+		a {
+			text-decoration: none;
 		}
 	}
 .nav-List {
@@ -68,9 +70,6 @@ $a-tags-hover: 'a:active, a:hover';
 	
 }
 
-.show {
-	border: 2px solid black;
-}
 .Show-card img {
 	width: 75%;
 }
@@ -95,6 +94,18 @@ $a-tags-hover: 'a:active, a:hover';
 }
 .About h1 {
 	font-family: 'Inter';
+	color: $brown;
+}
+.About h3 {
+	font-family: 'New Tegomin';
+	color: $brown;
+}
+.NewGive {
+	text-align: center;
+	padding-top: 10px;
+}
+.NewGive h2 {
+	font-family: 'New Tegomin';
 	color: $brown;
 }
 	  
