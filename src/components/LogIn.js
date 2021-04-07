@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
 
+
+
 export default class LogIn extends Component {
     constructor(props) {
         super(props);
@@ -39,32 +41,42 @@ export default class LogIn extends Component {
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
+            
         });
+        console.log(event.target.value)
     }
 
     render() {
-        return (<div classname="login">
+        return (<div>
+
+           
             <Form onSubmit={this.handleSubmit}>
-                <h3>Log In Form</h3>
-                <input 
+                <Form.Group controlId="formBasicUserName">
+                <Form.Label>Register</Form.Label>
+                <Form.Control 
                 type="text" 
                 name="username" 
-                placeholder="Name" 
+                placeholder="Enter Name" 
                 value={this.state.username} 
                 onChange={this.handleChange} 
                 required 
                 />
-                <input 
-                type="text" 
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                <Form.Control 
+                type="password" 
                 name="password" 
                 placeholder="Password" 
                 value={this.state.password} 
                 onChange={this.handleChange} 
                 required 
                 />
-                <Button variant="primary"type="submit">Log In</Button>
+                </Form.Group>
+                <Button variant="outline-success"type="submit">Log In</Button>
 
                 </Form>  
+                
         </div>);
     }
 

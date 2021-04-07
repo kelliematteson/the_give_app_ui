@@ -8,23 +8,25 @@ $green: #AFD275;
 $white: #fffafa;
 /// Theme Fonts
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Train+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
 $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
 #{$a-tags} {
 	text-decoration: none;
   }
   #{$a-tags-hover} {
-	color: blue;
+	text-decoration: none;
   }
-  .img-fluid { 
-	  max-width: 50%;
-	  height: auto;
-  }
+//   .img-fluid { 
+// 	  max-width: 50%;
+// 	  height: auto;
+//   }
 
-body {
-	height: 100%;
-	width: 100%;
-}
+//   html,
+//   body {
+// 	  margin: 0px;
+// 	  height: 100%;
+//   }
 .NavBar {
 	display: flex;
 	justify-content: space-around;
@@ -38,6 +40,9 @@ body {
 		color: $brown;
 		font-size: 50px;
 		}
+		a {
+			text-decoration: none;
+		}
 	}
 .nav-List {
 	width: 50%;
@@ -49,75 +54,132 @@ body {
 		color: $brown;
 	}
 }
-.App {
-	background-color: $white;
-	text-align: center;
-	height: 100vh;
+.Index-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 	width: 100vw;
-	place-items: center;
-	display: flex;
-	flex-direction: column;
+	
 }
-
-.App-header {
-  background-color: $white;
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(40px + 2vmin);
-  color: $brown;
-  font-family: 'Train One', 'serif';
-}
-
-.Data-div {
-	display: flex;
-}
-/// Index Component Styling
-.Index {
-  background-color: $white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: $brown;
+.CardGroup {
+	flex: 1;
 }
 .card {
 	display: flex;
-    background-color: $pink;
-    border-radius: 15px;
 	flex-direction: row;
-	flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-    color: $white;  
+	
 }
-.Show {
-  background-color: $white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: $brown;
+
+.Show-card img {
+	width: 75%;
 }
-.About-page {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	width: 50%;
-	.about-bold{
-		font-weight: bolder;
-		font-style: italic;
-	}
-	h2{
-		color: $brown;
-	}
+.principle-list {
+		list-style: none;
+		counter-reset: steps;
 }
+.principle-list li {
+		counter-increment: steps;
+}
+.principle-list li::before {
+		content: counter(steps);
+		margin-right: 0.5rem;
+		background: $green;
+		color: white;
+		width: 1.2em;
+		height: 1.2em;
+		border-radius: 50%;
+		display: inline-grid;
+		place-items: center;
+		line-height: 1.2em;
+}
+.About h1 {
+	font-family: 'Inter';
+	color: $brown;
+}
+.About h3 {
+	font-family: 'New Tegomin';
+	color: $brown;
+}
+.NewGive {
+	text-align: center;
+	padding-top: 10px;
+}
+.NewGive h2 {
+	font-family: 'New Tegomin';
+	color: $brown;
+}
+	  
+
+
+// .App {
+// 	background-color: $white;
+// 	text-align: center;
+// 	height: 100vh;
+// 	width: 100vw;
+// 	place-items: center;
+// 	display: flex;
+// 	flex-direction: column;
+// }
+
+// .App-header {
+//   background-color: $white;
+//   height: 20vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(40px + 2vmin);
+//   color: $brown;
+//   font-family: 'Train One', 'serif';
+// }
+
+// .Data-div {
+// 	display: flex;
+// }
+// /// Index Component Styling
+// .Index {
+//   background-color: $white;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: $brown;
+// }
+// .card {
+// 	display: flex;
+//     background-color: $pink;
+//     border-radius: 15px;
+// 	flex-direction: row;
+// 	flex-wrap: wrap;
+//     justify-content: center;
+//     padding-top: 5px;
+//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+//     color: $white;  
+// }
+// .Show {
+//   background-color: $white;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: $brown;
+// }
+// .About-page {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	flex-direction: column;
+// 	width: 50%;
+// 	.about-bold{
+// 		font-weight: bolder;
+// 		font-style: italic;
+// 	}
+// 	h2{
+// 		color: $brown;
+// 	}
+// }
 
 .form-style-2{
 	max-width: 500px;
@@ -200,11 +262,11 @@ body {
 }
 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

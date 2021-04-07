@@ -10,13 +10,10 @@ export default function NavBar() {
     return(
 
         <nav className="NavBar">
-            <Link to="/">
+            <Link className="logo" to="/">
             <h3>The Give</h3>
             </Link>
             <ul className="nav-List">
-                <Link style={navStyle} to="/give">
-                <li>Give</li>
-                </Link>
                 <Link style={navStyle} to="/about">
                 <li>About</li>
                 </Link>
