@@ -71,10 +71,11 @@ $a-tags-hover: 'a:active, a:hover';
 	}
 }
 .Index-container {
+	padding: 20px 20px 20px 20px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	width: 100vw;
+	// width: 100vw;
 	
 }
 .CardGroup {
