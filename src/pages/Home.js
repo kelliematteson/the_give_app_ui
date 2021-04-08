@@ -7,6 +7,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Index from '../components/Index';
 import Show from '../components/Show';
 import NewGive from '../components/NewGive';
+import Client from '../components/Client';
 
 
 
@@ -56,6 +57,9 @@ export default function Home() {
                 )}
           <section className="NewGive">
             <NewGive />
+            </section>
+            <section className="Client">
+            <Client />
             </section>
             </Col>
           </Row>
