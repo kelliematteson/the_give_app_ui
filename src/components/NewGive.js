@@ -5,7 +5,7 @@ import { FormControl, Form, FormGroup } from 'react-bootstrap';
 
 
 export default function NewGive(props) {
-    const [gives, setGives] = useState({});
+    const [gives, setGives] = useState([]);
     // useEffect(() => {
     //     const makeAPICall = async () => {
     //       try {

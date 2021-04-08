@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../scss/App.scss';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 
 import Index from '../components/Index';
@@ -47,7 +47,46 @@ export default function Home() {
         console.error(err)
       }
     }
- 
+    const input = useRef(null);
+    const inputImage = useRef(null);
+    const inputGiver = useRef(null);
+    const inputDescription = useRef(null);
+    // console.log(gives);
+
+    const handleSubmit = async (event) => {
+    event.preventDefault();
+    // const value = input.current.value;
+        try {
+            const response = await fetch('https://fast-reef-81026.herokuapp.com/gives', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    gife: {
+                    give_name: input.current.value,
+                    give_description: inputDescription.current.value,
+                    give_image: inputImage.current.value,
+                    giver: inputGiver.current.value,
+                    client_id: 2
+                }})
+            });
+            const data = await response.json();
+            setGives([...gives, data])
+            // [...gives, data.gife]
+            console.log(data);
+            // setGives([...gives, data.gives]);
+            input.current.value = '';
+            inputDescription.current.value = '';
+            inputImage.current.value = '';
+            inputGiver.current.value = '';
+
+        } catch (error){
+            console.error(error);
+        } finally {
+          window.location.assign('/home');
+        }
+      }
   
   return (
     
@@ -72,8 +111,46 @@ export default function Home() {
                   ''
                 )}
           <section className="NewGive">
-            <NewGive 
-            gives={gives}/>
+                
+                <h2>Buy Nothing, Give Freely, Share Creatively</h2>
+                
+                
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group controlid="postName">
+                            <Form.Control 
+                            type="text" 
+                            name="give_name" 
+                            ref={input} 
+                            placeholder="Item Name"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="postDescription">
+                            <Form.Control 
+                            type="text" 
+                            name="give_description" 
+                            ref={inputDescription} 
+                            placeholder="Description"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="postImage">
+                            <Form.Control 
+                            type="text" 
+                            name="give_image" 
+                            ref={inputImage} 
+                            placeholder="Image Link"
+                            />
+                            </Form.Group>
+                            <Form.Group controlid="postGiver">
+                            <Form.Control 
+                            type="text" 
+                            name="giver" 
+                            ref={inputGiver} 
+                            placeholder="Your Name"
+                            />
+                            </Form.Group>
+                        <Button variant="success" type="submit" value="Give">GIVE</Button>
+                    </Form>
+            
             </section>
             <section className="Client">
             <Client />
