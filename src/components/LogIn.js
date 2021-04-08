@@ -21,7 +21,7 @@ export default class LogIn extends Component {
             password
         } = this.state;
 
-        axios.post("http://localhost:3000/clients/login", {
+        axios.post("https://fast-reef-81026.herokuapp.com/clients/login", {
             client: {
                 username: username,
                 password: password

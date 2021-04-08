@@ -16,7 +16,7 @@ export default function Show(props){
         let id = props.showGive.id;
         console.log(id);
         try {
-            const response = await fetch(`http://localhost:3000/gives/${id}`, {
+            const response = await fetch(`https://fast-reef-81026.herokuapp.com/gives/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ export default function Show(props){
         e.preventDefault();
         let id = props.showGive.id;
         try {
-            const res = await fetch(`http://localhost:3000/gives/${id}`, {
+            const res = await fetch(`https://fast-reef-81026.herokuapp.com/gives/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

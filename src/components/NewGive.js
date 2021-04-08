@@ -29,7 +29,7 @@ export default function NewGive(props) {
     event.preventDefault();
     // const value = input.current.value;
         try {
-            const response = await fetch(`http://localhost:3000/gives`, {
+            const response = await fetch('https://fast-reef-81026.herokuapp.com/gives', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
