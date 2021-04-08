@@ -44,7 +44,8 @@ export default function NewGive(props) {
                 }})
             });
             const data = await response.json();
-            setGives([...gives, data.gife])
+            setGives(...gives, data.gife)
+            // [...gives, data.gife]
             console.log(data);
             // setGives([...gives, data.gives]);
             input.current.value = '';

@@ -27,6 +27,9 @@ export default function Show(props){
         } catch (error) {
             console.error(error)
         }
+        finally {
+            window.location.assign('/home');
+        }
     };
     const handleUpdate = async e => {
         e.preventDefault();
@@ -50,6 +53,8 @@ export default function Show(props){
 
         } catch (error){
             console.error(error);
+        } finally {
+            window.location.assign('/home');
         }
     };
     const styles = {
