@@ -10,7 +10,7 @@ export default function Index(props) {
     useEffect(() => {
         const makeAPICall = async () => {
           try {
-            const res = await fetch('http://localhost:3000/gives')
+            const res = await fetch('https://fast-reef-81026.herokuapp.com/gives')
             const data = await res.json();
             setGives(data.gives);
           } catch (err) {

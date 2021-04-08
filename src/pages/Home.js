@@ -22,7 +22,7 @@ export default function Home() {
   const [showGive, setShowGive] = useState({});
     const handleShow = async (id) => {
       try {
-      const res = await fetch(`http://localhost:3000/gives/${id}`);  
+      const res = await fetch(`https://fast-reef-81026.herokuapp.com/gives/${id}`);  
       const data = await res.json();
       setShowGive(data);
       toggleShowPageHide();

@@ -10,7 +10,7 @@ export default function NavBar() {
     return(
 
         <nav className="NavBar">
-            <Link className="logo" to="/">
+            <Link className="logo" to="/home">
             <h3>The Give</h3>
             </Link>
             <ul className="nav-List">

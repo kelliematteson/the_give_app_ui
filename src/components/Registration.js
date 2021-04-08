@@ -20,7 +20,7 @@ export default class Registration extends Component {
             password
         } = this.state;
 
-        axios.post("http://localhost:3000/clients", {
+        axios.post("https://fast-reef-81026.herokuapp.com/clients", {
             client: {
                 username: username,
                 password: password
