@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../scss/App.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -13,6 +13,22 @@ import Client from '../components/Client';
 
 
 export default function Home() {
+  /// trying to set the state here in the HOME PAGE component to pass down to the child components
+  const [gives, setGives] = useState([]);
+    
+    //to display ALL the gives on the index
+    useEffect(() => {
+        const makeAPICall = async () => {
+          try {
+            const res = await fetch('https://fast-reef-81026.herokuapp.com/gives')
+            const data = await res.json();
+            setGives(data.gives);
+          } catch (err) {
+            console.error(err)
+          }
+        }
+        makeAPICall()
+      }, [])
 
   const [showPageHidden, setShowPageHidden] = useState({ showPageHidden: true });
     const toggleShowPageHide = () => {
@@ -56,7 +72,8 @@ export default function Home() {
                   ''
                 )}
           <section className="NewGive">
-            <NewGive />
+            <NewGive 
+            gives={gives}/>
             </section>
             <section className="Client">
             <Client />
