@@ -55,6 +55,7 @@ export default function Home() {
 
     const handleSubmit = async (event) => {
     event.preventDefault();
+    
     // const value = input.current.value;
         try {
             const response = await fetch('https://fast-reef-81026.herokuapp.com/gives', {
@@ -67,8 +68,7 @@ export default function Home() {
                     give_name: input.current.value,
                     give_description: inputDescription.current.value,
                     give_image: inputImage.current.value,
-                    giver: inputGiver.current.value,
-                    client_id: 2
+                    client_id: localStorage.getItem('client.id')
                 }})
             });
             const data = await response.json();
@@ -139,15 +139,15 @@ export default function Home() {
                             ref={inputImage} 
                             placeholder="Image Link"
                             />
-                            </Form.Group>
-                            <Form.Group controlid="postGiver">
+                             </Form.Group>
+                            {/* <Form.Group controlid="postGiver">
                             <Form.Control 
                             type="text" 
                             name="giver" 
                             ref={inputGiver} 
                             placeholder="Your Name"
                             />
-                            </Form.Group>
+                            </Form.Group> */} 
                         <Button variant="success" type="submit" value="Give">GIVE</Button>
                     </Form>
             

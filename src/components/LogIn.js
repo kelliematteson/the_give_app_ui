@@ -15,28 +15,54 @@ export default class LogIn extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
-    handleSubmit(event) {
+    handleSubmit = async event =>  {
+        event.preventDefault();
         const {
             username,
             password
         } = this.state;
-
-        axios.post("https://fast-reef-81026.herokuapp.com/clients/login", {
-            client: {
-                username: username,
-                password: password
+        try {
+            const response = await axios.post("https://fast-reef-81026.herokuapp.com/clients/login", {
+                client: {
+                    username: username,
+                    password: password
+                }
+            });
+            if (response.data.token) {
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('client.id', response.data.client.id);
+                localStorage.setItem('client.username', response.data.client.username);
+                window.location.assign('/home');
+            } else {
+                localStorage.setItem('error', response.data.message);
             }
-        } 
+        } catch (error) {
+            console.log(error);
+        } finally {
+
+        }
+        // const {
+        //     username,
+        //     password
+        // } = this.state;
+
+        // axios.post("https://fast-reef-81026.herokuapp.com/clients/login", {
+        //     client: {
+        //         username: username,
+        //         password: password
+        //     }
+        // });
+        //     if() 
         // { withCredentials: true }
-        ).then(response => {
-            console.log("res from login", response);
+        // ).then(response => {
+        //     console.log("res from login", response);
             
 
-        })
-        .catch(error => {
-            console.log("registration error", error)
-        });
-        event.preventDefault();
+        // })
+        // .catch(error => {
+        //     console.log("registration error", error)
+        // });
+        // event.preventDefault();
     }
     handleChange(event) {
         this.setState({

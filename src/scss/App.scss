@@ -21,22 +21,29 @@ $a-tags-hover: 'a:active, a:hover';
 // 	  max-width: 50%;
 // 	  height: auto;
 //   }
+ #root {
+	 background-color: $white;
+ }
+ 
+  html,
+  body {
+	  margin: 0px;
+	  height: 100vh;
+	  background-color: $white;
+  }
 
-//   html,
-//   body {
-// 	  margin: 0px;
-// 	  height: 100%;
-//   }
 .splash-page {
 	display: flex;
 	align-items: center;
 	justify-content: center;
     overflow: hidden;
     position: absolute;     
-    width: 100% !important;     
-	height: 100% !important;
+    // width: 100% !important;     
+	// height: 100% !important;
+	width: 100vw;
+	height: 100vh;
 	z-index: 100;
-	background-color: white;
+	background-color: $white;
 	.NavBar {
 		display: none;
 	}
@@ -109,6 +116,7 @@ $a-tags-hover: 'a:active, a:hover';
 .About h1 {
 	font-family: 'Inter';
 	color: $brown;
+	
 }
 .About h3 {
 	font-family: 'New Tegomin';

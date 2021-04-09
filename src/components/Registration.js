@@ -29,6 +29,9 @@ export default class Registration extends Component {
         // { withCredentials: true }
         ).then(response => {
             console.log("registration res", response);
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('client_id', response.data.client_id);
+            localStorage.setItem('username', response.data.username);
             alert('You are now registered to GIVE!');
         })
         .catch(error => {
