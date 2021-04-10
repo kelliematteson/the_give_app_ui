@@ -1,70 +1,12 @@
-# Getting Started with Create React App
+The Give App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Idea: During the Pandemic there have been a few things that have kept me sane and given me some joy, The Buy Nothing FaceBook Group has been one of those things. This is a location dependent group. You join the Buy Nothing Group in your neighborhood and you begin posting - things you no longer have use for, things you think would have value to others, extra cookies you need to get rid of. You name it, you can probably find it. Buy Nothing and Give Freely. You help reduce useless purchases, give to your neighbors and receive gratefully.  I want to help turn this into an app.
 
-## Available Scripts
+User Case Stories: User X got a new dining room table and has no room for her old one. It has a lot of life left so she goes to The Give, creates a profile, is now able to make a post offering up this table. She logs back in later in the day to see that 6 people in the neighborhood have added themselves to the list to request the item. User X can do one of two things- use a randomizer function to pick the winner or read over their individual pleas and decided who to give it to. She chooses User Y and sends him an email to arrange prompt pick up.
 
-In the project directory, you can run:
+The Give App will have full crud capability. The user will be able to post new gives, update their give, delete their give once someone has agreed to take it. There will be Authentication so the each user will have a password and a secure account to check and see how many bids they've received on their gives. The App will have the option of a randomizer function to select a winner. Eventually, the app will sort you into the correct neighborhood group. Important because this is about fostering community with your immediate neighbors.
 
-### `yarn start`
+Technologies Utilized: Ruby on Rails backend, React frontend, Bootstrap for styling, Heroku for deployment<img width="262" alt="Screen Shot 2021-04-06 at 6 16 13 PM" src="https://user-images.githubusercontent.com/72826039/114260614-ed421680-998a-11eb-9843-4963fba2e709.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
